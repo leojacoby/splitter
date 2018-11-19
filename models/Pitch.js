@@ -27,7 +27,10 @@ const pitchSchema = new Schema({
   pitchLocation: {
     type: Number,
     zone: [1, 2, 3, 4, 5, 6, 7, 8] // 1-4 are strikes, 5-8 are balls
-  }
+  },
+  stolenBase: Boolean,
+  passedBall: Boolean,
+  wildPitch: Boolean
 });
 
 const Pitch = mongoose.model('pitches', pitchSchema, 'pitches');
