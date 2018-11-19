@@ -13,8 +13,9 @@ const inningSchema = new Schema({
   },
   fielding: [{
     type: Schema.Types.ObjectId,
-    ref: 'Player'
+    ref: 'Team'
   }],
+  // these last two necessary? bc can use evenness of halfInningNumber and game to dtrmn
   baseState: String,
   outs: {
     type: Number,

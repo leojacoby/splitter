@@ -25,6 +25,11 @@ const gameSchema = new Schema({
   halfInning: Number
 });
 
+// may need a history property to see things like...
+//  * games that we scored first
+//  * games that "x" pitcher started
+// but also we can reconstruct using inning number and refs
+
 
 const Game = mongoose.model('games', gameSchema, 'games');
 

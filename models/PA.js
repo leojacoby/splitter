@@ -26,7 +26,8 @@ const paSchema = new Schema({
   },
   result: {
     type: String,
-    enum: ["out", "strikout", "single", "double", "triple", "home run", "walk", "hit by pitch", "error", "sacrifice", "catcher's interference"],
+    enum: ["out", "strikout", "single", "double", "triple", "home run", "walk",
+    "hit by pitch", "error", "sacrifice", "catcher's interference"],
   },
   hitType: {
     type: String,
@@ -38,9 +39,13 @@ const paSchema = new Schema({
   },
   location: {
     type: Number,
-    enum: Array.from(Array(20).keys()).concat([null]) // default until zones are figured out
+    enum: Array.from(Array(20).keys()).concat([null])
+    // default until zones are figured out
   },
-
+  history: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Pitch'
+  }]
 });
 
 
